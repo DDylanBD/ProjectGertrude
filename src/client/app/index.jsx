@@ -1,23 +1,24 @@
-import React from 'react';
-import {render} from 'react-dom';
-import Footer from './Footer/footer.jsx';
-import Maps from './Footer/maps.jsx';
-import Header from './header/Header.jsx';
-import './index.scss';
-
-
+import React from "react";
+import { render } from "react-dom";
+import Footer from "./Footer/footer.jsx";
+import Maps from "./Footer/maps.jsx";
+import Header from "./header/Header.jsx";
+import GridMenu from "./gridMenu/GridMenu.jsx";
+import "./index.scss";
 
 class App extends React.Component {
-  render () {
+  render() {
     return (
-        <div>
-        <Header/>
+
+      <div>
+        <Header />
+        <GridMenu />
         <Maps />
-           <Footer />
-        </div>
+        <Footer />
+      </div>
+
     );
   }
 }
 
-render(
-    <App/>, document.getElementById('app'));
+render(<App />, document.getElementById("app"));

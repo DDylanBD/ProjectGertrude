@@ -47,7 +47,7 @@
   \**********************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
@@ -69,7 +69,11 @@
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
-	__webpack_require__(/*! ./index.scss */ 190);
+	var _GridMenu = __webpack_require__(/*! ./gridMenu/GridMenu.jsx */ 190);
+	
+	var _GridMenu2 = _interopRequireDefault(_GridMenu);
+	
+	__webpack_require__(/*! ./index.scss */ 194);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -89,12 +93,13 @@
 	  }
 	
 	  _createClass(App, [{
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'div',
+	        "div",
 	        null,
 	        _react2.default.createElement(_Header2.default, null),
+	        _react2.default.createElement(_GridMenu2.default, null),
 	        _react2.default.createElement(_maps2.default, null),
 	        _react2.default.createElement(_footer2.default, null)
 	      );
@@ -104,7 +109,7 @@
 	  return App;
 	}(_react2.default.Component);
 	
-	(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('app'));
+	(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById("app"));
 
 /***/ },
 /* 1 */
@@ -22903,6 +22908,257 @@
 
 /***/ },
 /* 190 */
+/*!**********************************************!*\
+  !*** ./src/client/app/gridMenu/GridMenu.jsx ***!
+  \**********************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _CardModel = __webpack_require__(/*! ../cardModel/CardModel.jsx */ 191);
+	
+	var _CardModel2 = _interopRequireDefault(_CardModel);
+	
+	__webpack_require__(/*! ./GridMenu.scss */ 192);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var Course = function Course(name, price, quantity, sub) {
+	  _classCallCheck(this, Course);
+	
+	  this.name = name;
+	  this.price = price;
+	  this.quantity = this.quantity || 0;
+	  this.sub = sub || 0;
+	};
+	
+	var GridMenu = function (_Component) {
+	  _inherits(GridMenu, _Component);
+	
+	  function GridMenu(props) {
+	    _classCallCheck(this, GridMenu);
+	
+	    var _this = _possibleConstructorReturn(this, (GridMenu.__proto__ || Object.getPrototypeOf(GridMenu)).call(this, props));
+	
+	    _this.state = {
+	      data: [],
+	      cart: []
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(GridMenu, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _this2 = this;
+	
+	      fetch('https://simplonco.github.io/js-css-3days-group-project/data/data.json').then(function (res) {
+	        return res.json();
+	      }).then(function (resData) {
+	        _this2.setState({ data: resData.carte });
+	      }).catch(function (error) {
+	        console.log('Error fectching and parsing data', error);
+	      });
+	    }
+	  }, {
+	    key: 'renderCards',
+	    value: function renderCards() {
+	      return this.state.data.map(function (el) {
+	        return _react2.default.createElement(_CardModel2.default, {
+	          key: el.id,
+	          name: el.name,
+	          image: el.image,
+	          description: el.description,
+	          price: el.price
+	        });
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var items = this.renderCards();
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'row grid' },
+	        items,
+	        _react2.default.createElement('ul', { className: 'cart' })
+	      );
+	    }
+	  }]);
+	
+	  return GridMenu;
+	}(_react.Component);
+	
+	exports.default = GridMenu;
+
+/***/ },
+/* 191 */
+/*!************************************************!*\
+  !*** ./src/client/app/cardModel/CardModel.jsx ***!
+  \************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var CardModel = function (_React$Component) {
+	  _inherits(CardModel, _React$Component);
+	
+	  function CardModel() {
+	    _classCallCheck(this, CardModel);
+	
+	    return _possibleConstructorReturn(this, (CardModel.__proto__ || Object.getPrototypeOf(CardModel)).apply(this, arguments));
+	  }
+	
+	  _createClass(CardModel, [{
+	    key: "render",
+	    value: function render() {
+	      var _props = this.props,
+	          name = _props.name,
+	          image = _props.image,
+	          description = _props.description,
+	          price = _props.price;
+	
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "row" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "col s12 m6" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "card " },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "card-image" },
+	              _react2.default.createElement("img", { src: image, alt: name }),
+	              _react2.default.createElement(
+	                "a",
+	                { className: "btn-floating btn-large halfway-fab waves-effect waves-light red hoverable", onClick: this.addToCart },
+	                _react2.default.createElement(
+	                  "i",
+	                  { className: "material-icons" },
+	                  "add"
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "card-content" },
+	              _react2.default.createElement(
+	                "span",
+	                { className: "card-title " },
+	                _react2.default.createElement("b", null),
+	                name
+	              ),
+	              _react2.default.createElement(
+	                "p",
+	                null,
+	                description
+	              ),
+	              _react2.default.createElement("br", null),
+	              _react2.default.createElement(
+	                "h6",
+	                null,
+	                _react2.default.createElement(
+	                  "b",
+	                  null,
+	                  price
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return CardModel;
+	}(_react2.default.Component);
+	
+	exports.default = CardModel;
+
+/***/ },
+/* 192 */
+/*!***********************************************!*\
+  !*** ./src/client/app/gridMenu/GridMenu.scss ***!
+  \***********************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./../../../../~/css-loader!./../../../../~/sass-loader!./GridMenu.scss */ 193);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../../../~/style-loader/addStyles.js */ 182)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./GridMenu.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./GridMenu.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 193 */
+/*!******************************************************************************!*\
+  !*** ./~/css-loader!./~/sass-loader!./src/client/app/gridMenu/GridMenu.scss ***!
+  \******************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./../../../../~/css-loader/lib/css-base.js */ 181)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".grid {\n  width: 100%;\n  height: 85vh;\n  margin-bottom: 10px; }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 194 */
 /*!***********************************!*\
   !*** ./src/client/app/index.scss ***!
   \***********************************/
@@ -22911,7 +23167,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./index.scss */ 191);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./index.scss */ 195);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 182)(content, {});
@@ -22931,7 +23187,7 @@
 	}
 
 /***/ },
-/* 191 */
+/* 195 */
 /*!******************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/client/app/index.scss ***!
   \******************************************************************/
