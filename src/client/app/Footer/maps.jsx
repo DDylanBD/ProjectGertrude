@@ -7,7 +7,7 @@ class Maps extends React.Component {
     var url="https://www.google.com/maps/embed/v1/place?key=AIzaSyCT44nHBuMxNfcp5erYhGe6mbrXTOfEZZQ&q=Simplon.rXTOfEZZQ&q=Simplon";
     return (
         <div className="Maps">
-        <iframe width="600" height="450" frameborder="0" style={{border:0}} src={url} allowfullscreen></iframe>
+        <iframe width="600" height="450" frameBorder="0" style={{border:0}} src={url} allowFullscreen></iframe>
         </div>
 
     );
