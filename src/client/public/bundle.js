@@ -22569,7 +22569,7 @@
 	      return _react2.default.createElement(
 	        "div",
 	        { className: "Maps" },
-	        _react2.default.createElement("iframe", { width: "600", height: "450", frameBorder: "0", style: { border: 0 }, src: url, allowFullscreen: true })
+	        _react2.default.createElement("iframe", { width: "600", height: "450", frameBorder: "0", style: { border: 0 }, src: url, allowFullScreen: true })
 	      );
 	    }
 	  }]);
