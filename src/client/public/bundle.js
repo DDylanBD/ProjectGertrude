@@ -22901,7 +22901,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".contenairDropdown {\n  width: 100%;\n  padding: 0px;\n  position: absolute;\n  top: 100px;\n  display: flex;\n  justify-content: flex-end; }\n\n.secondContenair {\n  width: 62%;\n  height: 30vh;\n  display: flex;\n  justify-content: space-around;\n  background-color: #b5717a;\n  border-radius: 10px; }\n\n.dropdownAchat {\n  width: 25%;\n  padding: 0;\n  margin: 0;\n  border-right: 1px solid black;\n  display: flex;\n  justify-content: center; }\n\n.dropdownAchat:nth-child(4n) {\n  border: 0; }\n\n.modalAchat {\n  display: flex;\n  justify-content: center;\n  border-bottom: 1px solid black;\n  width: 100%;\n  height: 6vh; }\n", ""]);
+	exports.push([module.id, ".contenairDropdown {\n  width: 100%;\n  padding: 0;\n  position: absolute;\n  top: 100px;\n  display: flex;\n  justify-content: flex-end; }\n\n.secondContenair {\n  width: 62%;\n  height: 30vh;\n  display: flex;\n  justify-content: space-around;\n  background-color: #b5717a;\n  border-radius: 10px; }\n\n.dropdownAchat {\n  width: 25%;\n  padding: 0;\n  margin: 0;\n  border-right: 1px solid black;\n  display: flex;\n  justify-content: center; }\n\n.dropdownAchat:nth-child(4n) {\n  border: 0; }\n\n.modalAchat {\n  display: flex;\n  justify-content: center;\n  border-bottom: 1px solid black;\n  width: 100%;\n  height: 6vh; }\n\n@media screen and (max-width: 800px) {\n  .secondContenair {\n    width: 100%; } }\n\n@media screen and (max-width: 400px) {\n  .modalAchat {\n    height: 10vh;\n    margin: 0; } }\n", ""]);
 	
 	// exports
 
