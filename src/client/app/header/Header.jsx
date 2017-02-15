@@ -3,7 +3,13 @@ import './Header.scss';
 // import TweenMax from 'gsap';
 import Dropdown from './dropdown/Dropdown.jsx';
 
-
+const styleHeader = {
+  height : '100' +'vh',
+}
+const styleImg = {
+  height: '100'+'%',
+width: '100'+ '%',
+}
 class Header extends React.Component {
     // constructor(props) {
     //   super(props);
@@ -39,9 +45,10 @@ class Header extends React.Component {
 
     render() {
         return (
+          <div style={styleHeader}>
             <div className='containerHeader'>
                 <div className='carrousel'>
-                    <img src='../../assets/hamburger-494706_1920.jpg'/>
+                    <img style={styleImg} src='../../assets/hamburger-494706_1920.jpg'/>
                 </div>
                 {this.state.isToggleOn
                     ? ''
@@ -55,6 +62,7 @@ class Header extends React.Component {
                     <a href="#" className='lienImage'><img className='achat' src='./assets/buy.svg' onClick={this.handleClick}/></a>
                 </div>
             </div>
+          </div>
         );
     }
 }

@@ -95,8 +95,8 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_Header2.default, null),
-	        _react2.default.createElement(_footer2.default, null),
-	        _react2.default.createElement(_maps2.default, null)
+	        _react2.default.createElement(_maps2.default, null),
+	        _react2.default.createElement(_footer2.default, null)
 	      );
 	    }
 	  }]);
@@ -22609,6 +22609,14 @@
 	// import TweenMax from 'gsap';
 	
 	
+	var styleHeader = {
+	    height: '100' + 'vh'
+	};
+	var styleImg = {
+	    height: '100' + '%',
+	    width: '100' + '%'
+	};
+	
 	var Header = function (_React$Component) {
 	    _inherits(Header, _React$Component);
 	
@@ -22661,34 +22669,38 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'containerHeader' },
+	                { style: styleHeader },
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'carrousel' },
-	                    _react2.default.createElement('img', { src: '../../assets/hamburger-494706_1920.jpg' })
-	                ),
-	                this.state.isToggleOn ? '' : _react2.default.createElement(_Dropdown2.default, null),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'nomDuSite' },
+	                    { className: 'containerHeader' },
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: 'contNom' },
-	                        'GERTRUDE\'S'
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'panierAchat' },
+	                        { className: 'carrousel' },
+	                        _react2.default.createElement('img', { style: styleImg, src: '../../assets/hamburger-494706_1920.jpg' })
+	                    ),
+	                    this.state.isToggleOn ? '' : _react2.default.createElement(_Dropdown2.default, null),
 	                    _react2.default.createElement(
-	                        'p',
-	                        { className: 'contact' },
-	                        'Contact'
+	                        'div',
+	                        { className: 'nomDuSite' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'contNom' },
+	                            'GERTRUDE\'S'
+	                        )
 	                    ),
 	                    _react2.default.createElement(
-	                        'a',
-	                        { href: '#', className: 'lienImage' },
-	                        _react2.default.createElement('img', { className: 'achat', src: './assets/buy.svg', onClick: this.handleClick })
+	                        'div',
+	                        { className: 'panierAchat' },
+	                        _react2.default.createElement(
+	                            'p',
+	                            { className: 'contact' },
+	                            'Contact'
+	                        ),
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: '#', className: 'lienImage' },
+	                            _react2.default.createElement('img', { className: 'achat', src: './assets/buy.svg', onClick: this.handleClick })
+	                        )
 	                    )
 	                )
 	            );
@@ -22745,7 +22757,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".containerHeader {\n  width: 100%;\n  height: 15vh;\n  display: flex;\n  font-family: 'Oswald', sans-serif;\n  font-size: 20px;\n  color: white; }\n  .containerHeader li {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 17%; }\n\n.nomDuSite {\n  width: 60%;\n  height: 15vh;\n  color: white;\n  z-index: 10;\n  display: flex;\n  justify-content: flex-end;\n  transition: 0.5s; }\n\n.contNom {\n  height: 15vh;\n  display: flex;\n  align-items: center;\n  font-size: 40px; }\n\n.contact {\n  width: 33%;\n  display: flex;\n  align-items: center; }\n\n.panierAchat {\n  width: 40%;\n  z-index: 10;\n  display: flex;\n  justify-content: flex-end; }\n\n.liste {\n  display: flex;\n  width: 100%;\n  height: 100%;\n  justify-content: flex-end; }\n\n.menuResponsive {\n  display: none;\n  width: 50%;\n  height: 15vh; }\n  .menuResponsive img {\n    height: 65%; }\n\n.achat {\n  width: 40px;\n  height: 65%; }\n\n.imgBackground {\n  position: absolute;\n  z-index: -10; }\n\n.lienImage {\n  width: 17%;\n  z-index: 10;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n.imgBackground1 {\n  position: absolute;\n  width: 1000px;\n  height: 1000px;\n  z-index: -10; }\n\n.carrousel {\n  position: absolute;\n  z-index: -10;\n  height: 1200px;\n  width: 100%; }\n\n.carrouselUl {\n  display: flex;\n  width: 100%;\n  height: 100vh; }\n\n@media screen and (max-width: 1000px) {\n  .nomDuSite {\n    width: 40%;\n    transition: 0.5s; } }\n\n@media screen and (max-width: 500px) {\n  .nomDuSite {\n    width: 50%; }\n  .panierAchat {\n    width: 46%; }\n  .lienImage {\n    width: 30%; } }\n\n@media screen and (max-width: 400px) {\n  .panierAchat {\n    justify-content: center;\n    transition: 0.5s; }\n  .nomDuSite {\n    width: 58%; } }\n", ""]);
+	exports.push([module.id, ".containerHeader {\n  width: 100%;\n  height: 15vh;\n  display: flex;\n  font-family: 'Oswald', sans-serif;\n  font-size: 20px;\n  color: white; }\n  .containerHeader li {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 17%; }\n\n.nomDuSite {\n  width: 60%;\n  height: 15vh;\n  color: white;\n  z-index: 10;\n  display: flex;\n  justify-content: flex-end;\n  transition: 0.5s; }\n\n.contNom {\n  height: 15vh;\n  display: flex;\n  align-items: center;\n  font-size: 40px; }\n\n.contact {\n  width: 33%;\n  display: flex;\n  align-items: center; }\n\n.panierAchat {\n  width: 40%;\n  z-index: 10;\n  display: flex;\n  justify-content: flex-end; }\n\n.liste {\n  display: flex;\n  width: 100%;\n  height: 100%;\n  justify-content: flex-end; }\n\n.menuResponsive {\n  display: none;\n  width: 50%;\n  height: 15vh; }\n  .menuResponsive img {\n    height: 65%; }\n\n.achat {\n  width: 40px;\n  height: 65%; }\n\n.imgBackground {\n  position: absolute;\n  z-index: -10; }\n\n.lienImage {\n  width: 17%;\n  z-index: 10;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n.imgBackground1 {\n  position: absolute;\n  width: 1000px;\n  height: 1000px;\n  z-index: -10; }\n\n.carrousel {\n  position: absolute;\n  z-index: -10;\n  height: 100%;\n  width: 100%; }\n\n.carrouselUl {\n  display: flex;\n  width: 100%;\n  height: 100vh; }\n\n@media screen and (max-width: 1000px) {\n  .nomDuSite {\n    width: 40%;\n    transition: 0.5s; } }\n\n@media screen and (max-width: 500px) {\n  .nomDuSite {\n    width: 50%; }\n  .panierAchat {\n    width: 46%; }\n  .lienImage {\n    width: 30%; } }\n\n@media screen and (max-width: 400px) {\n  .panierAchat {\n    justify-content: center;\n    transition: 0.5s; }\n  .nomDuSite {\n    width: 58%; } }\n", ""]);
 	
 	// exports
 
@@ -22930,7 +22942,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body, ul {\n  padding: 0;\n  margin: 0;\n  overflow: hidden; }\n\nli {\n  list-style-type: none; }\n", ""]);
+	exports.push([module.id, "body, ul {\n  padding: 0;\n  margin: 0; }\n\nli {\n  list-style-type: none; }\n", ""]);
 	
 	// exports
 
