@@ -1,8 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
-<<<<<<< HEAD
 import Footer from './Footer/footer.jsx';
 import Maps from './Footer/maps.jsx';
+import Header from './header/Header.jsx';
+import './index.scss';
 
 
 
