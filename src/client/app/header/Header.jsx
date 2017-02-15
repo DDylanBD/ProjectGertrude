@@ -3,12 +3,6 @@ import './Header.scss';
 // import TweenMax from 'gsap';
 import Dropdown from './dropdown/Dropdown.jsx';
 
-const img1 = {
-    backgroundImage: 'url(https://media-cdn.tripadvisor.com/media/photo-s/02/1b/9a/bf/le-grande-bouffe.jpg)'
-}
-const img2 = {
-    backgroundImage: 'url(https://media-cdn.tripadvisor.com/media/photo-s/02/1b/9a/bf/le-grande-bouffe.jpg)'
-}
 
 class Header extends React.Component {
     // constructor(props) {
@@ -47,12 +41,8 @@ class Header extends React.Component {
         return (
             <div className='containerHeader'>
                 <div className='carrousel'>
-                  <ul className='carrouselUl'>
-                    <li><img src='https://media-cdn.tripadvisor.com/media/photo-s/02/1b/9a/bf/le-grande-bouffe.jpg'/></li>
-                    <li><img src='../../assets/hamburger-494706_1920.jpg'/></li>
-                  </ul>
+                    <img src='../../assets/hamburger-494706_1920.jpg'/>
                 </div>
-
                 {this.state.isToggleOn
                     ? ''
                     : <Dropdown/>}

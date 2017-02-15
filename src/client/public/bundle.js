@@ -57,11 +57,19 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 32);
 	
-	var _Header = __webpack_require__(/*! ./header/Header.jsx */ 178);
+	var _footer = __webpack_require__(/*! ./Footer/footer.jsx */ 178);
+	
+	var _footer2 = _interopRequireDefault(_footer);
+	
+	var _maps = __webpack_require__(/*! ./Footer/maps.jsx */ 183);
+	
+	var _maps2 = _interopRequireDefault(_maps);
+	
+	var _Header = __webpack_require__(/*! ./header/Header.jsx */ 184);
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
-	__webpack_require__(/*! ./index.scss */ 186);
+	__webpack_require__(/*! ./index.scss */ 190);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -72,26 +80,28 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var App = function (_React$Component) {
-	    _inherits(App, _React$Component);
+	  _inherits(App, _React$Component);
 	
-	    function App() {
-	        _classCallCheck(this, App);
+	  function App() {
+	    _classCallCheck(this, App);
 	
-	        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	  }
+	
+	  _createClass(App, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_Header2.default, null),
+	        _react2.default.createElement(_footer2.default, null),
+	        _react2.default.createElement(_maps2.default, null)
+	      );
 	    }
+	  }]);
 	
-	    _createClass(App, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(_Header2.default, null)
-	            );
-	        }
-	    }]);
-	
-	    return App;
+	  return App;
 	}(_react2.default.Component);
 	
 	(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('app'));
@@ -22064,14 +22074,14 @@
 /***/ },
 /* 178 */
 /*!******************************************!*\
-  !*** ./src/client/app/header/Header.jsx ***!
+  !*** ./src/client/app/Footer/footer.jsx ***!
   \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -22080,11 +22090,9 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	__webpack_require__(/*! ./Header.scss */ 179);
+	var _reactDom = __webpack_require__(/*! react-dom */ 32);
 	
-	var _Dropdown = __webpack_require__(/*! ./dropdown/Dropdown.jsx */ 183);
-	
-	var _Dropdown2 = _interopRequireDefault(_Dropdown);
+	__webpack_require__(/*! ./Footer.scss */ 179);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -22093,135 +22101,75 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// import TweenMax from 'gsap';
 	
+	var footer = function (_React$Component) {
+	  _inherits(footer, _React$Component);
 	
-	var img1 = {
-	    backgroundImage: 'url(https://media-cdn.tripadvisor.com/media/photo-s/02/1b/9a/bf/le-grande-bouffe.jpg)'
-	};
-	var img2 = {
-	    backgroundImage: 'url(https://media-cdn.tripadvisor.com/media/photo-s/02/1b/9a/bf/le-grande-bouffe.jpg)'
-	};
+	  function footer() {
+	    _classCallCheck(this, footer);
 	
-	var Header = function (_React$Component) {
-	    _inherits(Header, _React$Component);
+	    return _possibleConstructorReturn(this, (footer.__proto__ || Object.getPrototypeOf(footer)).apply(this, arguments));
+	  }
 	
-	    // constructor(props) {
-	    //   super(props);
-	    // this.state = {
-	    //   transform: 700 + 'px'
-	    // }
-	    //   this.handleClick = this.handleClick.bind(this);
-	    // }
-	    // handleClick() {
-	    //   TweenMax.to(".menu", 1, {left: 80 + '%'});
-	    // }
-	    function Header(props) {
-	        _classCallCheck(this, Header);
-	
-	        var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, props));
-	
-	        _this.state = {
-	            isToggleOn: true,
-	            isToggleOn1: true
-	        };
-	        // This binding is necessary to make `this` work in the callback
-	        _this.handleClick = _this.handleClick.bind(_this);
-	        _this.handleClick1 = _this.handleClick1.bind(_this);
-	
-	        return _this;
+	  _createClass(footer, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "footer" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "menu" },
+	          _react2.default.createElement(
+	            "p",
+	            null,
+	            "51, Rue de Vincennes"
+	          ),
+	          _react2.default.createElement(
+	            "p",
+	            null,
+	            "93100 Montreuil"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "ul",
+	          null,
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "Accueil"
+	          ),
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "Carte"
+	          ),
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "Contact"
+	          )
+	        )
+	      );
 	    }
+	  }]);
 	
-	    _createClass(Header, [{
-	        key: 'handleClick',
-	        value: function handleClick() {
-	            this.setState(function (prevState) {
-	                return {
-	                    isToggleOn: !prevState.isToggleOn
-	                };
-	            });
-	        }
-	    }, {
-	        key: 'handleClick1',
-	        value: function handleClick1() {
-	            this.setState(function (prevState) {
-	                return {
-	                    isToggleOn1: !prevState.isToggleOn1
-	                };
-	            });
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'containerHeader' },
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'carrousel' },
-	                    _react2.default.createElement(
-	                        'ul',
-	                        { className: 'carrouselUl' },
-	                        _react2.default.createElement(
-	                            'li',
-	                            null,
-	                            _react2.default.createElement('img', { src: 'https://media-cdn.tripadvisor.com/media/photo-s/02/1b/9a/bf/le-grande-bouffe.jpg' })
-	                        ),
-	                        _react2.default.createElement(
-	                            'li',
-	                            null,
-	                            _react2.default.createElement('img', { src: '../../assets/hamburger-494706_1920.jpg' })
-	                        )
-	                    )
-	                ),
-	                this.state.isToggleOn ? '' : _react2.default.createElement(_Dropdown2.default, null),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'nomDuSite' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'contNom' },
-	                        'GERTRUDE\'S'
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'panierAchat' },
-	                    _react2.default.createElement(
-	                        'p',
-	                        { className: 'contact' },
-	                        'Contact'
-	                    ),
-	                    _react2.default.createElement(
-	                        'a',
-	                        { href: '#', className: 'lienImage' },
-	                        _react2.default.createElement('img', { className: 'achat', src: './assets/buy.svg', onClick: this.handleClick })
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return Header;
+	  return footer;
 	}(_react2.default.Component);
 	
-	exports.default = Header;
-	
-	// {this.state.isToggleOn1
-	//     ? <img className='imgBackground' src='../../assets/hamburger-494706_1920.jpg'/>
-	//     : <img className='imgBackground1' src='https://media-cdn.tripadvisor.com/media/photo-s/02/1b/9a/bf/le-grande-bouffe.jpg'/>} */}
+	exports.default = footer;
 
 /***/ },
 /* 179 */
 /*!*******************************************!*\
-  !*** ./src/client/app/header/Header.scss ***!
+  !*** ./src/client/app/Footer/Footer.scss ***!
   \*******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../../~/css-loader!./../../../../~/sass-loader!./Header.scss */ 180);
+	var content = __webpack_require__(/*! !./../../../../~/css-loader!./../../../../~/sass-loader!./Footer.scss */ 180);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../../~/style-loader/addStyles.js */ 182)(content, {});
@@ -22230,8 +22178,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./Header.scss", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./Header.scss");
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./Footer.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./Footer.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -22243,7 +22191,7 @@
 /***/ },
 /* 180 */
 /*!**************************************************************************!*\
-  !*** ./~/css-loader!./~/sass-loader!./src/client/app/header/Header.scss ***!
+  !*** ./~/css-loader!./~/sass-loader!./src/client/app/Footer/Footer.scss ***!
   \**************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -22252,7 +22200,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".containerHeader {\n  width: 100%;\n  height: 15vh;\n  display: flex;\n  font-family: 'Oswald', sans-serif;\n  font-size: 20px;\n  color: white; }\n  .containerHeader li {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 17%; }\n\n.nomDuSite {\n  width: 60%;\n  height: 15vh;\n  color: white;\n  z-index: 10;\n  display: flex;\n  justify-content: flex-end;\n  transition: 0.5s; }\n\n.contNom {\n  height: 15vh;\n  display: flex;\n  align-items: center;\n  font-size: 40px; }\n\n.contact {\n  width: 33%;\n  display: flex;\n  align-items: center; }\n\n.panierAchat {\n  width: 40%;\n  z-index: 10;\n  display: flex;\n  justify-content: flex-end; }\n\n.liste {\n  display: flex;\n  width: 100%;\n  height: 100%;\n  justify-content: flex-end; }\n\n.menuResponsive {\n  display: none;\n  width: 50%;\n  height: 15vh; }\n  .menuResponsive img {\n    height: 65%; }\n\n.achat {\n  width: 40px;\n  height: 65%; }\n\n.imgBackground {\n  position: absolute;\n  z-index: -10; }\n\n.lienImage {\n  width: 17%;\n  z-index: 10;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n.imgBackground1 {\n  position: absolute;\n  width: 1000px;\n  height: 1000px;\n  z-index: -10; }\n\n.carrousel {\n  position: absolute;\n  z-index: -10;\n  height: 1200px;\n  width: 100%; }\n\n.carrouselUl {\n  display: flex;\n  width: 100%;\n  height: 100vh; }\n\n.carrouselUl li {\n  position: relative;\n  height: 100vh;\n  width: 100%; }\n\n.carrouselUl li img {\n  height: 100vh;\n  width: 100%; }\n\n@keyframes carrousel {\n  10% {\n    margin-left: 0%; }\n  100% {\n    margin-left: 10%; } }\n\n@media screen and (max-width: 1000px) {\n  .nomDuSite {\n    width: 40%;\n    transition: 0.5s; } }\n\n@media screen and (max-width: 500px) {\n  .nomDuSite {\n    width: 50%; }\n  .panierAchat {\n    width: 46%; }\n  .lienImage {\n    width: 30%; } }\n\n@media screen and (max-width: 400px) {\n  .panierAchat {\n    justify-content: center;\n    transition: 0.5s; }\n  .nomDuSite {\n    width: 58%; } }\n", ""]);
+	exports.push([module.id, ".footer {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n  height: 100px;\n  background-color: powderblue; }\n\n.menu {\n  padding: 20px;\n  margin: 25px; }\n\nul {\n  list-style: none;\n  display: flex;\n  justify-content: space-between; }\n\nli {\n  margin-right: 25px; }\n", ""]);
 	
 	// exports
 
@@ -22573,6 +22521,237 @@
 
 /***/ },
 /* 183 */
+/*!****************************************!*\
+  !*** ./src/client/app/Footer/maps.jsx ***!
+  \****************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(/*! react-dom */ 32);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Maps = function (_React$Component) {
+	  _inherits(Maps, _React$Component);
+	
+	  function Maps() {
+	    _classCallCheck(this, Maps);
+	
+	    return _possibleConstructorReturn(this, (Maps.__proto__ || Object.getPrototypeOf(Maps)).apply(this, arguments));
+	  }
+	
+	  _createClass(Maps, [{
+	    key: "render",
+	    value: function render() {
+	      var url = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCT44nHBuMxNfcp5erYhGe6mbrXTOfEZZQ&q=Simplon.rXTOfEZZQ&q=Simplon";
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "Maps" },
+	        _react2.default.createElement("iframe", { width: "600", height: "450", frameborder: "0", style: { border: 0 }, src: url, allowfullscreen: true })
+	      );
+	    }
+	  }]);
+	
+	  return Maps;
+	}(_react2.default.Component);
+	
+	exports.default = Maps;
+
+/***/ },
+/* 184 */
+/*!******************************************!*\
+  !*** ./src/client/app/header/Header.jsx ***!
+  \******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	__webpack_require__(/*! ./Header.scss */ 185);
+	
+	var _Dropdown = __webpack_require__(/*! ./dropdown/Dropdown.jsx */ 187);
+	
+	var _Dropdown2 = _interopRequireDefault(_Dropdown);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// import TweenMax from 'gsap';
+	
+	
+	var Header = function (_React$Component) {
+	    _inherits(Header, _React$Component);
+	
+	    // constructor(props) {
+	    //   super(props);
+	    // this.state = {
+	    //   transform: 700 + 'px'
+	    // }
+	    //   this.handleClick = this.handleClick.bind(this);
+	    // }
+	    // handleClick() {
+	    //   TweenMax.to(".menu", 1, {left: 80 + '%'});
+	    // }
+	    function Header(props) {
+	        _classCallCheck(this, Header);
+	
+	        var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, props));
+	
+	        _this.state = {
+	            isToggleOn: true,
+	            isToggleOn1: true
+	        };
+	        // This binding is necessary to make `this` work in the callback
+	        _this.handleClick = _this.handleClick.bind(_this);
+	        _this.handleClick1 = _this.handleClick1.bind(_this);
+	
+	        return _this;
+	    }
+	
+	    _createClass(Header, [{
+	        key: 'handleClick',
+	        value: function handleClick() {
+	            this.setState(function (prevState) {
+	                return {
+	                    isToggleOn: !prevState.isToggleOn
+	                };
+	            });
+	        }
+	    }, {
+	        key: 'handleClick1',
+	        value: function handleClick1() {
+	            this.setState(function (prevState) {
+	                return {
+	                    isToggleOn1: !prevState.isToggleOn1
+	                };
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'containerHeader' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'carrousel' },
+	                    _react2.default.createElement('img', { src: '../../assets/hamburger-494706_1920.jpg' })
+	                ),
+	                this.state.isToggleOn ? '' : _react2.default.createElement(_Dropdown2.default, null),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'nomDuSite' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'contNom' },
+	                        'GERTRUDE\'S'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'panierAchat' },
+	                    _react2.default.createElement(
+	                        'p',
+	                        { className: 'contact' },
+	                        'Contact'
+	                    ),
+	                    _react2.default.createElement(
+	                        'a',
+	                        { href: '#', className: 'lienImage' },
+	                        _react2.default.createElement('img', { className: 'achat', src: './assets/buy.svg', onClick: this.handleClick })
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Header;
+	}(_react2.default.Component);
+	
+	exports.default = Header;
+	
+	// {this.state.isToggleOn1
+	//     ? <img className='imgBackground' src='../../assets/hamburger-494706_1920.jpg'/>
+	//     : <img className='imgBackground1' src='https://media-cdn.tripadvisor.com/media/photo-s/02/1b/9a/bf/le-grande-bouffe.jpg'/>} */}
+
+/***/ },
+/* 185 */
+/*!*******************************************!*\
+  !*** ./src/client/app/header/Header.scss ***!
+  \*******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./../../../../~/css-loader!./../../../../~/sass-loader!./Header.scss */ 186);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../../../~/style-loader/addStyles.js */ 182)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./Header.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./Header.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 186 */
+/*!**************************************************************************!*\
+  !*** ./~/css-loader!./~/sass-loader!./src/client/app/header/Header.scss ***!
+  \**************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./../../../../~/css-loader/lib/css-base.js */ 181)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".containerHeader {\n  width: 100%;\n  height: 15vh;\n  display: flex;\n  font-family: 'Oswald', sans-serif;\n  font-size: 20px;\n  color: white; }\n  .containerHeader li {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 17%; }\n\n.nomDuSite {\n  width: 60%;\n  height: 15vh;\n  color: white;\n  z-index: 10;\n  display: flex;\n  justify-content: flex-end;\n  transition: 0.5s; }\n\n.contNom {\n  height: 15vh;\n  display: flex;\n  align-items: center;\n  font-size: 40px; }\n\n.contact {\n  width: 33%;\n  display: flex;\n  align-items: center; }\n\n.panierAchat {\n  width: 40%;\n  z-index: 10;\n  display: flex;\n  justify-content: flex-end; }\n\n.liste {\n  display: flex;\n  width: 100%;\n  height: 100%;\n  justify-content: flex-end; }\n\n.menuResponsive {\n  display: none;\n  width: 50%;\n  height: 15vh; }\n  .menuResponsive img {\n    height: 65%; }\n\n.achat {\n  width: 40px;\n  height: 65%; }\n\n.imgBackground {\n  position: absolute;\n  z-index: -10; }\n\n.lienImage {\n  width: 17%;\n  z-index: 10;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n.imgBackground1 {\n  position: absolute;\n  width: 1000px;\n  height: 1000px;\n  z-index: -10; }\n\n.carrousel {\n  position: absolute;\n  z-index: -10;\n  height: 1200px;\n  width: 100%; }\n\n.carrouselUl {\n  display: flex;\n  width: 100%;\n  height: 100vh; }\n\n@media screen and (max-width: 1000px) {\n  .nomDuSite {\n    width: 40%;\n    transition: 0.5s; } }\n\n@media screen and (max-width: 500px) {\n  .nomDuSite {\n    width: 50%; }\n  .panierAchat {\n    width: 46%; }\n  .lienImage {\n    width: 30%; } }\n\n@media screen and (max-width: 400px) {\n  .panierAchat {\n    justify-content: center;\n    transition: 0.5s; }\n  .nomDuSite {\n    width: 58%; } }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 187 */
 /*!*****************************************************!*\
   !*** ./src/client/app/header/dropdown/Dropdown.jsx ***!
   \*****************************************************/
@@ -22590,7 +22769,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	__webpack_require__(/*! ./Dropdown.scss */ 184);
+	__webpack_require__(/*! ./Dropdown.scss */ 188);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -22665,7 +22844,7 @@
 	exports.default = Dropdown;
 
 /***/ },
-/* 184 */
+/* 188 */
 /*!******************************************************!*\
   !*** ./src/client/app/header/dropdown/Dropdown.scss ***!
   \******************************************************/
@@ -22674,7 +22853,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../../../~/css-loader!./../../../../../~/sass-loader!./Dropdown.scss */ 185);
+	var content = __webpack_require__(/*! !./../../../../../~/css-loader!./../../../../../~/sass-loader!./Dropdown.scss */ 189);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../../../~/style-loader/addStyles.js */ 182)(content, {});
@@ -22694,7 +22873,7 @@
 	}
 
 /***/ },
-/* 185 */
+/* 189 */
 /*!*************************************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/client/app/header/dropdown/Dropdown.scss ***!
   \*************************************************************************************/
@@ -22711,7 +22890,7 @@
 
 
 /***/ },
-/* 186 */
+/* 190 */
 /*!***********************************!*\
   !*** ./src/client/app/index.scss ***!
   \***********************************/
@@ -22720,7 +22899,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./index.scss */ 187);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./index.scss */ 191);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 182)(content, {});
@@ -22740,7 +22919,7 @@
 	}
 
 /***/ },
-/* 187 */
+/* 191 */
 /*!******************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/client/app/index.scss ***!
   \******************************************************************/
