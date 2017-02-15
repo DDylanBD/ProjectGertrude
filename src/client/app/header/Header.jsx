@@ -48,7 +48,7 @@ class Header extends React.Component {
           <div style={styleHeader}>
             <div className='containerHeader'>
                 <div className='carrousel'>
-                    <img style={styleImg} src='../../assets/hamburger-494706_1920.jpg'/>
+                    <img style={styleImg} src='https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg'/>
                 </div>
                 {this.state.isToggleOn
                     ? ''

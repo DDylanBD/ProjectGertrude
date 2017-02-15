@@ -22681,7 +22681,7 @@
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'carrousel' },
-	                        _react2.default.createElement('img', { style: styleImg, src: '../../assets/hamburger-494706_1920.jpg' })
+	                        _react2.default.createElement('img', { style: styleImg, src: 'https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg' })
 	                    ),
 	                    this.state.isToggleOn ? '' : _react2.default.createElement(_Dropdown2.default, null),
 	                    _react2.default.createElement(
